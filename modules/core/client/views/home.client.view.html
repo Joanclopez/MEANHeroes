@@ -1,84 +1,196 @@
 <section ng-controller="HomeController">
-  <div class="jumbotron text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
+    <div class="video">
+      <div class="transparent-video">
+        <img id="torneo-logo"src="/modules/core/client/img/Torneo.png" alt="">
+        <img id="smash-logo"src="/modules/core/client/img/SSB_logo.png" alt="">
+        <!-- <img id="wii"src="/modules/core/client/img/Wii.png" alt=""> -->
+        <a ui-sref="authentication.signup" ng-hide="authentication.user" class="btn btn-default" id="register-button">
+          <img id="mario"src="/modules/core/client/img/Mario.png" alt="">
+          <img id="register-text"src="/modules/core/client/img/registrate.png" alt="">
+        </a>
       </div>
+      <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
     </div>
-    <br>
-    <div class="row">
-      <p class="lead">
-        Open-Source Full-Stack Solution For MEAN Applications
-      </p>
+    <section id="services" class="services bg-primary">
+          <div class="container">
+              <div class="row text-center">
+                  <div class="col-lg-10 col-lg-offset-1">
+                      <h2>Premios</h2>
+                      <hr class="small">
+                      <div class="row">
+                          <div class="col-md-4 col-sm-6">
+                              <div class="service-item">
+                                  <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                              </span>
+                                  <h4>
+                                      <strong>1er lugar</strong>
+                                  </h4>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-sm-6">
+                              <div class="service-item">
+                                  <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                              </span>
+                                  <h4>
+                                      <strong>2 lugar</strong>
+                                  </h4>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-4 col-sm-6">
+                              <div class="service-item">
+                                  <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                              </span>
+                                  <h4>
+                                      <strong>3er lugar</strong>
+                                  </h4>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- /.row (nested) -->
+                  </div>
+                  <!-- /.col-lg-10 -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container -->
+      </section>
+      <!-- Call to Action -->
+      <aside id="bases" class="call-to-action bg-primary">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 text-center">
+                      <h3>Checa la bases</h3>
+                      <button ng-click="open()" class="btn btn-lg btn-light">Click Me!</button>
+                  </div>
+              </div>
+          </div>
+      </aside>
+      <aside class="callout">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h2>Lugar y Fecha</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <h3>
+                                    <strong>Lugar</strong>
+                                </h3>
+                                <p>En Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite</p>
+                                <h3>
+                                    <strong>Fecha</strong>
+                                </h3>
+                                <p>Sabado 7 de Mayo a las 11:00 AM</p>
+                                <div style="display:inline-block; min-height:290px;">
+                                  <datepicker ng-model="dt" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"date-disabled="true"></datepicker>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1750.3169625924104!2d-106.09078644201557!3d28.67067784895053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea430b652ff901%3A0x84de078d9641e3!2sPalabra+Viva+Radio!5e0!3m2!1ses-419!2smx!4v1459997851936" width="500" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </aside>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Reactivo</strong>
+                    </h4>
+                    <p>Calle Pino 2700<br>Chihuahua, Chihuahua</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:reactivo@gmail.com">reactivo@gmail.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Reactivo 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Bases</h3>
     </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
-      </p>
+    <div class="modal-body">
+        Hora: 11:00 am <br>
+        Fecha: 7 / Mayo / 2016 <br>
+        Lugar: Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <br>
+        Inscripción <span class="label label-info">20$</span>(La cual debera ser pagada hasta 1 hora antes del evento en las instalaciones de ARPA en palabra viva Cosmos). <br>
+        Reglas: <br>
+        <ul>
+          <li>
+            3 Vidas
+          </li>
+          <li>
+            8 Minutos
+          </li>
+          <li>
+            Los items en "off" y "none"
+          </li>
+          <li>
+            Si el tiempo se agota, el vencedor se determina en primer lugar por vida y luego por el porcentaje.
+          </li>
+          <li>
+            Resolver Empates: Si los porcentajes son los mismos o los jugadores mueren simultáneamente, se reiniciara con 3 minutos, 1 Vida, mismos personajes, mismo mundo.
+          </li>
+          // <li>
+          //   Todas las peleas seran un 2/3 con excepcion del loser, winner y grand final que seran un 3/5
+          // </li>
+          <li>
+            En el caso de una disputa, puertos de controlador serán seleccionados tirando una moneda.
+          </li>
+          <li>
+            Eres responsable de tu propio control, no somos responsables de cualquier mal funcionamiento de nuestros controles.
+          </li>
+          <li>
+            Stalling es prohibido.Stalling: El acto de evitar deliberadamente todo conflicto, por lo que uno puede hacer que el juego inservible. No es stalling huir del oponente para alcanzar una mejor posición, mientras se utiliza un infinito hasta agotarse el tiempo en lugar de un KO es. Como tal, cualquier chain-grab ,infinito, lock, etc. no puede superar los 300%.
+          </li>
+        </ul>
+
+
+
+
+
+
+
+
     </div>
-  </div>
-  <div>
-    <h2>Congrats! You've configured and run the sample application.</h2>
-    <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
-    <p>This sample application tracks users and articles.</p>
-    <ul>
-      <li>
-        Click
-        <em>Sign Up</em> to get started.
-      </li>
-      <li>
-        Configure your app to work with your social accounts, by editing the
-        <em>/config/env/*.js</em> files.
-      </li>
-      <li>
-        Edit your users module.
-      </li>
-      <li>
-        Add new CRUD modules.
-      </li>
-      <li>
-        Have fun...
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <h2><strong>M</strong>ongoDB</h2>
-      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
     </div>
-    <div class="col-md-3">
-      <h2><strong>E</strong>xpress</h2>
-      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>A</strong>ngularJS</h2>
-      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>N</strong>ode.js</h2>
-      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
-    </div>
-  </div>
-  <div class="well">
-    <h2>MEAN.JS Documentation</h2>
-    <p>
-      Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
-      <ul>
-        <li><a target="_blank" href="http://meanjs.org/docs.html">MEAN.JS Documentation</a>
-        </li>
-        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
-				</li> -->
-        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
-        </li>
-        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
-        </li>
-      </ul>
-    </p>
-  </div>
-  <br>Enjoy &amp; Keep Us Updated,
-  <br>The MEAN.JS Team.
+</script>
 </section>

@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-  // Password controller Spec
+  // Authentication controller Spec
   describe('PasswordController', function() {
     // Initialize global variables
     var PasswordController,
@@ -82,7 +82,7 @@
       describe('askForPasswordReset', function() {
         var credentials = {
           username: 'test',
-          password: 'P@ssw0rd!!'
+          password: 'test'
         };
         beforeEach(function() {
           scope.credentials = credentials;
@@ -91,7 +91,7 @@
         it('should clear scope.success and scope.error', function() {
           scope.success = 'test';
           scope.error = 'test';
-          scope.askForPasswordReset(true);
+          scope.askForPasswordReset();
 
           expect(scope.success).toBeNull();
           expect(scope.error).toBeNull();
@@ -104,7 +104,7 @@
               'message': errorMessage
             });
 
-            scope.askForPasswordReset(true);
+            scope.askForPasswordReset();
             $httpBackend.flush();
           });
 
@@ -124,7 +124,7 @@
               'message': successMessage
             });
 
-            scope.askForPasswordReset(true);
+            scope.askForPasswordReset();
             $httpBackend.flush();
           });
 
@@ -151,7 +151,7 @@
         it('should clear scope.success and scope.error', function() {
           scope.success = 'test';
           scope.error = 'test';
-          scope.resetUserPassword(true);
+          scope.resetUserPassword();
 
           expect(scope.success).toBeNull();
           expect(scope.error).toBeNull();
@@ -163,7 +163,7 @@
             'message': errorMessage
           });
 
-          scope.resetUserPassword(true);
+          scope.resetUserPassword();
           $httpBackend.flush();
 
           expect(scope.error).toBe(errorMessage);
@@ -176,7 +176,7 @@
           beforeEach(function() {
             $httpBackend.when('POST', '/api/auth/reset/' + token, passwordDetails).respond(user);
 
-            scope.resetUserPassword(true);
+            scope.resetUserPassword();
             $httpBackend.flush();
           });
 

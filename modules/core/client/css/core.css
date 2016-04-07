@@ -1,5 +1,6 @@
 .content {
-  margin-top: 50px;
+font-family: 'Dosis', sans-serif!important;
+padding: 15px;
 }
 .undecorated-link:hover {
   text-decoration: none;
@@ -34,4 +35,107 @@ a:hover .header-profile-image {
 }
 .has-error .help-inline.error-text {
   display: inline;
+}
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.5);;
+    border-color: #080808;
+    background-image: none;
+}
+.video{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /*display: block;*/
+  /*z-index: 24;*/
+  /*position: fixed;*/
+  /*position: absolute;*/
+}
+.transparent-video{
+  position: absolute;
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+.transparent-video{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}
+#smash-logo{
+  display: block;
+  position: absolute;
+  width: 50%;
+  margin-top: 10%;
+  margin-left: 25%;
+
+}
+#torneo-logo{
+  display: block;
+  position: absolute;
+  width: 50%;
+  top: -50px;
+  margin-left: 24%;
+}
+@media (max-width: 750px) {
+  #torneo-logo{
+    display: block;
+    position: absolute;
+    width: 50%;
+    top: -15px;
+    margin-left: 24%;
+  }
+}
+#wii{
+  display: block;
+  position: absolute;
+  width: 10%;
+  margin-top: 10%;
+  margin-left: 67%;
+
+}
+#mario{
+  width: 20%;
+}
+#register-button{
+  position: absolute;
+  width: 30%;
+  margin-top: 28%;
+  left: 35%;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0.5);;
+  background-image: none;
+  z-index: 3333;
+}
+#register-text{
+  width:70%;
+}
+
+#header-logo{
+  position: fixed;
+  top: -40px;
+  width: 180px;
+}
+
+.header-section{
+  width: 100%;
+  text-align: center;
+}
+#services{
+  font-family: 'Dosis', sans-serif!important;
+  color: black;
+  background-color: white!important;
+  background-image: url(/modules/core/client/img/sombras/Yoshi.png), url(/modules/core/client/img/sombras/samus.png), url(/modules/core/client/img/sombras/MARIO.png);
+ background-position: right , left ,center;
+ background-repeat: no-repeat, no-repeat, no-repeat;
+ background-size: 300px ,300px ,300px;
+
+}
+.callout{
+      background: url(/modules/core/client/img/smash-banner.png) no-repeat center center scroll!important;
+}
+#bases{
+  background: url(/modules/core/client/img/bases.png) no-repeat right center scroll!important;
+  background-color: #282828!important;
 }
