@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope','$state', 'Authentication','$modal',
-  function ($scope,$state, Authentication,$modal) {
+angular.module('core').controller('HomeController', ['$scope','$state', 'Authentication','$modal','$http',
+  function ($scope,$state, Authentication,$modal,$http) {
     // This provides Authentication context.
      $scope.dt = new Date(2016, 4, 7);
     $scope.$state = $state;
@@ -36,5 +36,16 @@ angular.module('core').controller('HomeController', ['$scope','$state', 'Authent
         $log.info('Modal dismissed at: ' + new Date());
       });
     };
+
+    $scope.findUsers=function(){
+      $http.get('/api/users-list-home').
+      success(function(data, status) {
+        $scope.users=data;
+        console.log(data);
+      }).
+      error(function(data, status) {
+        console.log(data);
+      });
+    }
   }
 ]);

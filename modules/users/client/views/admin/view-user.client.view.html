@@ -47,6 +47,12 @@
         <div class="col-md-3"><strong>Roles</strong></div>
         <div class="col-md-6" ng-bind="user.roles"></div>
       </div>
+      <div class="row">
+        <div class="col-md-3"><strong>Inscripcion</strong></div>
+        <span ng-show="user.inscription"class="label label-info">Pagado</span>
+        <span ng-show="!user.inscription"class="label label-warning">No Pagado</span>
+      </div>
+
     </div>
   </div>
 </section>

@@ -12,9 +12,12 @@
   </div>
   <div class="list-group">
     <a ng-repeat="user in pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
+      <img ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
       <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
       <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
       <p class="list-group-item-text" ng-bind="user.email"></p>
+      <span ng-show="user.inscription"class="label label-info">Pagado</span>
+      <span ng-show="!user.inscription"class="label label-warning">No Pagado</span>
     </a>
   </div>
 

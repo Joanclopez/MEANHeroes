@@ -11,6 +11,17 @@
       </div>
       <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
     </div>
+    <!-- Call to Action -->
+    <aside id="bases" class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Checa la bases</h3>
+                    <button ng-click="open()" class="btn btn-lg btn-light">Click Me!</button>
+                </div>
+            </div>
+        </div>
+    </aside>
     <section id="services" class="services bg-primary">
           <div class="container">
               <div class="row text-center">
@@ -63,13 +74,16 @@
           </div>
           <!-- /.container -->
       </section>
+
       <!-- Call to Action -->
-      <aside id="bases" class="call-to-action bg-primary">
+      <aside id="bases" class="call-to-action bg-primary" ng-init="findUsers()">
           <div class="container">
               <div class="row">
                   <div class="col-lg-12 text-center">
-                      <h3>Checa la bases</h3>
-                      <button ng-click="open()" class="btn btn-lg btn-light">Click Me!</button>
+                      <h3>Participantes Registrados</h3>
+                  </div>
+                  <div class="col-md-12">
+                    <img ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
                   </div>
               </div>
           </div>
@@ -167,9 +181,6 @@
           <li>
             Resolver Empates: Si los porcentajes son los mismos o los jugadores mueren simultáneamente, se reiniciara con 3 minutos, 1 Vida, mismos personajes, mismo mundo.
           </li>
-          // <li>
-          //   Todas las peleas seran un 2/3 con excepcion del loser, winner y grand final que seran un 3/5
-          // </li>
           <li>
             En el caso de una disputa, puertos de controlador serán seleccionados tirando una moneda.
           </li>

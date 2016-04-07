@@ -89,6 +89,22 @@ exports.changeProfilePicture = function (req, res) {
 };
 
 /**
+ * List of Users
+ */
+
+exports.listForHome = function (req, res) {
+  User.find({}, '-salt -password -firstName -lastName -email -username -provider -providerData -additionalProvidersData -updated').sort('-created').populate('user', 'displayName').exec(function (err, users) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    }
+
+    res.json(users);
+  });
+};
+
+/**
  * Send User
  */
 exports.me = function (req, res) {
