@@ -37,16 +37,21 @@ var UserSchema = new Schema({
     type: String,
     trim: true,
     default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+    validate: [validateLocalStrategyProperty, 'Ingresa tu nombre']
   },
   lastName: {
     type: String,
     trim: true,
     default: '',
-    validate: [validateLocalStrategyProperty, 'Please fill in your last name']
+    validate: [validateLocalStrategyProperty, 'Ingresa tu apellido']
   },
   displayName: {
     type: String,
+    trim: true
+  },
+  inscription: {
+    type: Boolean,
+    default:false,
     trim: true
   },
   email: {
@@ -59,7 +64,7 @@ var UserSchema = new Schema({
   },
   username: {
     type: String,
-    unique: 'Username already exists',
+    unique: 'Ya existe el nombre de usuario ',
     required: 'Please fill in a username',
     lowercase: true,
     trim: true
@@ -67,7 +72,7 @@ var UserSchema = new Schema({
   password: {
     type: String,
     default: '',
-    validate: [validateLocalStrategyPassword, 'Password should be longer']
+    validate: [validateLocalStrategyPassword, 'Contraseña debe ser mas larga']
   },
   salt: {
     type: String
