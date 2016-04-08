@@ -33,7 +33,6 @@ angular.module('core').controller('HomeController', ['$scope','$state', 'Authent
 
       modalInstance.result.then(function () {
       }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
       });
     };
 
@@ -46,6 +45,6 @@ angular.module('core').controller('HomeController', ['$scope','$state', 'Authent
       error(function(data, status) {
         console.log(data);
       });
-    }
+    };
   }
 ]);

@@ -86,15 +86,7 @@ a:hover .header-profile-image {
   top: -50px;
   margin-left: 24%;
 }
-@media (max-width: 750px) {
-  #torneo-logo{
-    display: block;
-    position: absolute;
-    width: 50%;
-    top: -15px;
-    margin-left: 24%;
-  }
-}
+
 #wii{
   display: block;
   position: absolute;
@@ -121,8 +113,9 @@ a:hover .header-profile-image {
 }
 
 #header-logo{
-  position: fixed;
-  top: -40px;
+  /*position: fixed;*/
+  /*top: -40px;*/
+  margin-top: -15px;
   width: 180px;
 }
 
@@ -146,4 +139,41 @@ a:hover .header-profile-image {
 #bases{
   background: url(/modules/core/client/img/bases.png) no-repeat right center scroll!important;
   background-color: #282828!important;
+}
+.img-gift{
+  width: 200px;
+}
+.modal-content{
+  background: url(/modules/core/client/img/modal-bases.png) no-repeat center center scroll!important;
+}
+#checa-las-bases{
+  width: 40%;
+}
+#lugaryfecha{
+  width: 300px;
+}
+@media (max-width: 750px) {
+  #torneo-logo{
+    display: block;
+    position: absolute;
+    width: 50%;
+    top: -15px;
+    margin-left: 24%;
+  }
+}
+
+@media (max-width:450px){
+  #services{
+    font-family: 'Dosis', sans-serif!important;
+    color: black;
+    background-color: white!important;
+    background-image: url(/modules/core/client/img/sombras/Yoshi.png), url(/modules/core/client/img/sombras/samus.png), url(/modules/core/client/img/sombras/MARIO.png);
+   background-position: center top , center center, center bottom;
+   background-repeat: no-repeat, no-repeat, no-repeat;
+   background-size: 300px ,300px ,300px;
+
+  }
+  .callout{
+        background: url(/modules/core/client/img/smash-banner.png) no-repeat scroll!important;
+  }
 }
