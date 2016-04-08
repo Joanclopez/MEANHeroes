@@ -177,3 +177,9 @@ a:hover .header-profile-image {
         background: url(/modules/core/client/img/smash-banner.png) no-repeat scroll!important;
   }
 }
+@media (min-width:768px){
+  #mapa{
+    width: 500px;
+    height: 400px;
+  }
+}
