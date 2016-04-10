@@ -8,6 +8,10 @@
           <img id="mario"src="/modules/core/client/img/Mario.png" alt="">
           <img id="register-text"src="/modules/core/client/img/registrate.png" alt="">
         </a>
+        <button ng-click="openPlatformSelect()" ng-show="authentication.user" class="btn btn-default" id="selecciona-button">
+          <img id="mario"src="/modules/core/client/img/Mario.png" alt="">
+          <img id="selecciona-text"src="/modules/core/client/img/seleccionalaplataforma.png" alt="">
+        </button>
       </div>
       <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
     </div>
@@ -45,7 +49,7 @@
                           <div class="col-md-4 col-sm-6 col-xs-10 col-sm-offset-0 col-xs-offset-1">
                               <div class="service-item">
                                   <h4>
-                                      <strong>2 lugar</strong>
+                                      <strong>2do lugar</strong>
                                   </h4>
                                   Cubo Rubik <br>
                                   Playera del evento <br>
@@ -76,11 +80,16 @@
       <aside id="bases" class="call-to-action bg-primary" ng-init="findUsers()">
           <div class="container">
               <div class="row">
-                  <div class="col-lg-12 text-center">
+                  <div class="col-xs-12 text-center">
                       <h3>Participantes Registrados</h3>
                   </div>
-                  <div class="col-md-12">
-                    <img ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
+                  <div class="col-md-6 text-center">
+                    <h4>Smash 4</h4>
+                    <img ng-show="user.smash4.register" ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <h4>Smash Melee</h4>
+                    <img ng-show="user.smashMelee.register"ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
                   </div>
               </div>
           </div>
@@ -129,28 +138,18 @@
                     </h4>
                     <p>Calle Pino 2700<br>Chihuahua, Chihuahua</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:reactivo@gmail.com">reactivo@gmail.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i> 4-17-37-17</li>
+                        <!-- <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:reactivo@gmail.com">reactivo@gmail.com</a> -->
                         </li>
                     </ul>
                     <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Reactivo 2015</p>
+                    <p class="text-muted">Copyright &copy; Reactivo 2016</p>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- Modal for bases -->
     <script type="text/ng-template" id="myModalContent.html">
     <div class="modal-header">
         <h3 class="modal-title">Bases</h3>
@@ -159,45 +158,80 @@
         Hora: 11:00 am <br>
         Fecha: 7 / Mayo / 2016 <br>
         Lugar: Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <br>
-        Inscripción <span class="label label-info">20$</span>(La cual debera ser pagada hasta 1 hora antes del evento en las instalaciones de ARPA en palabra viva Cosmos). <br>
+        Inscripción <span class="label label-info">$30 pesos x 1 torneo, o $50 pesos x 2</span>(La cual debera ser pagada hasta 1 hora antes del evento en las instalaciones de ARPA en palabra viva Cosmos). <br>
         Reglas: <br>
-        <ul>
-          <li>
-            3 Vidas
-          </li>
-          <li>
-            8 Minutos
-          </li>
-          <li>
-            Los items en "off" y "none"
-          </li>
-          <li>
-            Si el tiempo se agota, el vencedor se determina en primer lugar por vida y luego por el porcentaje.
-          </li>
-          <li>
-            Resolver Empates: Si los porcentajes son los mismos o los jugadores mueren simultáneamente, se reiniciara con 3 minutos, 1 Vida, mismos personajes, mismo mundo.
-          </li>
-          <li>
-            En el caso de una disputa, puertos de controlador serán seleccionados tirando una moneda.
-          </li>
-          <li>
-            Eres responsable de tu propio control, no somos responsables de cualquier mal funcionamiento de nuestros controles.
-          </li>
-          <li>
-            Stalling es prohibido.Stalling: El acto de evitar deliberadamente todo conflicto, por lo que uno puede hacer que el juego inservible. No es stalling huir del oponente para alcanzar una mejor posición, mientras se utiliza un infinito hasta agotarse el tiempo en lugar de un KO es. Como tal, cualquier chain-grab ,infinito, lock, etc. no puede superar los 300%.
-          </li>
-        </ul>
-
-
-
-
-
-
-
-
+        <ul class="_5a_q _5yj1" dir="ltr">
+          <li class="_2cuy _509q _2vxa">
+            El escenario de la primera match será elegida      haciendo striking de entre los escenarios iniciales en el orden      presentado.</li>
+            <li class="_2cuy _509q _2vxa">
+              En matches consecutivas, el ganador podrá      hacer ban a un escenario, inicial o counterpick, por el resto del set. El      perdedor, entonces, eligirá cualquier escenario de los restantes que      desee. No habrá bans en sets 3 de 5.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              <span class="_5yi-">Dave's Stupid Rule</span>. Un jugador no puede elegir como counterpick      un escenario en el que ha ganado antes en el mismo set, a menos que su      oponente esté de acuerdo.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              <span class="_5yi-">Gentleman's Rule</span>. Cualquier juego se puede jugar en cualquier      escenario mientras ambos jugadores estén de acuerdo.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              Cualquier acción que pueda prevenir que el juego continúe (Freezing, personajes desapareciendo, game reset, etc.) resultará en el jugador que inció la acción perdiendo la match.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              <span class="_5yi-">Muerte Súbita</span>. Muerte súbita no deberá ser jugada nunca. En caso de que el tiempo acabe, el ganador es elegido basado en quièn tiene      màs stocks, seguido de quièn tiene menos porcentaje. En caso de un      completo empate, la victoria se decidirá con una pelea de 1 stock 3      minutos.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              <span class="_5yi-">Movimientos Suicidas</span>. Los movimientos suicidas (Como Side Special      de Boswer o Ganondorf) son perfectamente válidos, y si una pelea es      empatada como resultado de uno,el jugador que inició el movimiento es      considerado ganador.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              <span class="_5yi-">Pausa Durante Pelea</span>. Si un jugador pone pausa en cualquier      momento durante una pelea, el jugador tendrá que perder una stock.      Cualquier cantidad de pausa, sea  o  segundos, se considera una      violación.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              El tiempo es una parte esencial durante un      torneo. Los jugadores deben estar siempre pendientes de los organizadores      y responder rápidamente. No cumplir puede resultar perdida del set o      incluso descalificación del torneo.
+            </li>
+            <li class="_2cuy _509q _2vxa">
+              Los organizadores tienen derecho a remover a      cualquier persona que crean que está causando desorden.
+            </li>
+          </ul>
+        <tabset justified="true">
+          <tab heading="Smash Bros 4">
+            <div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">2 Stocks, 6 Mins.</li><li class="_2cuy _509q _2vxa">Miis son siempre válidos, usando un Mii      Invitado con moveset 1111.</li><li class="_2cuy _509q _2vxa">En caso de estar disponibles, custom moves      podrán ser utilizados si ambos jugadores están de acuerdo con ello.</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">ESCENARIOS INICIALES</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Battlefield</li><li class="_2cuy _509q _2vxa">Final Destination</li><li class="_2cuy _509q _2vxa">Smashville</li><li class="_2cuy _509q _2vxa">Dreamland</li><li class="_2cuy _509q _2vxa">Town &amp; City</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">COUNTERPICKS</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Lylat Cruise</li><li class="_2cuy _509q _2vxa">Duck Hunt</li></ul>
+          </tab>
+          <tab heading="Smash Bros Melee">
+            <div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">4 Stocks, 8 Mins.</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">ESCENARIOS INICIALES</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Final Destination</li><li class="_2cuy _509q _2vxa">Battlefield</li><li class="_2cuy _509q _2vxa">Yoshi&#039;s Story</li><li class="_2cuy _509q _2vxa">Dreamland</li><li class="_2cuy _509q _2vxa">Fountain of Dreams</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">COUNTERPICKS</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Pokemon Stadium</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">PM</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">4 Stocks, 8 Mins</li><li class="_2cuy _509q _2vxa">Input Buffer Disabled.</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">ESCENARIOS INICIALES</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Final Destination</li><li class="_2cuy _509q _2vxa">Battlefield</li><li class="_2cuy _509q _2vxa">Smashville</li><li class="_2cuy _509q _2vxa">Pokemon Stadium 2</li><li class="_2cuy _509q _2vxa">Dreamland</li><li class="_2cuy _509q _2vxa">Green Hill Zone</li><li class="_2cuy _509q _2vxa">Yoshi&#039;s Story (Melee) [Singles]</li><li class="_2cuy _509q _2vxa">Distant Planet [Doubles]</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">COUNTERPICKS</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Yoshi&#039;s Island (Brawl)</li><li class="_2cuy _509q _2vxa">Norfair</li><li class="_2cuy _509q _2vxa">Wario Ware</li><li class="_2cuy _509q _2vxa">Fountain of Dreams</li></ul><div class="_2cuy _3dgx _2vxa">   </div></div></div>
+          </tab>
+        </tabset>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
     </div>
+</script>
+
+
+<script type="text/ng-template" id="modalSelectTournament.html">
+<div class="modal-header">
+    <h3 class="modal-title">Selecciona la Paltaforma</h3>
+</div>
+<div class="modal-body">
+<div class="alert alert-info">
+  <strong> Nota: </strong> Se pueden seleccionar ambas plataformas (podras participar en los dos torneos).<br>
+    1 x $30 o las 2 x $50 costo que debera ser cubierto antes del evento en las instalaciones de ARPA en Palabra viva Cosmos.
+</div>
+<div class="row">
+  <div class="col-md-6 text-center">
+    <button type="button" class="btn btn-primary" ng-model="smash4Register" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+      <img class="img-responsive"src="/modules/core/client/img/smashforwii.png" alt="">
+    </button>
+  </div>
+  <div class="col-md-6 text-center">
+    <button type="button" class="btn btn-primary" ng-model="smashMeleeRegister" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+      <img class="img-responsive"src="/modules/core/client/img/smashmelee.png" alt="">
+    </button>
+  </div>
+</div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+
+</div>
 </script>
 </section>

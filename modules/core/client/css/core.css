@@ -106,7 +106,20 @@ a:hover .header-profile-image {
   border-radius: 0px;
   background-color: rgba(0, 0, 0, 0.5);;
   background-image: none;
-  z-index: 3333;
+  z-index:25;
+}
+#selecciona-button{
+  position: absolute;
+  width: 60%;
+  margin-top: 28%;
+  left: 20%;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0.5);;
+  background-image: none;
+  z-index:25;
+}
+#selecciona-text{
+  width:80%;
 }
 #register-text{
   width:70%;
@@ -134,7 +147,11 @@ a:hover .header-profile-image {
 
 }
 .callout{
-      background: url(/modules/core/client/img/smash-banner.png) no-repeat center center scroll!important;
+  background: url(/modules/core/client/img/smash-banner.png) no-repeat center center fixed!important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #bases{
   background: url(/modules/core/client/img/bases.png) no-repeat right center scroll!important;
@@ -144,7 +161,11 @@ a:hover .header-profile-image {
   width: 200px;
 }
 .modal-content{
-  background: url(/modules/core/client/img/modal-bases.png) no-repeat center center scroll!important;
+  background: url(/modules/core/client/img/modal-bases.png) no-repeat center center fixed!important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #checa-las-bases{
   width: 40%;
