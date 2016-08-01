@@ -2,9 +2,9 @@
 
 module.exports = {
   app: {
-    title: 'Frikilandia',
-    description: 'El mejor concurso de Smash',
-    keywords: 'smash, concurso, friki, Frikilandia',
+    title: 'HEROES',
+    description: 'Convencion de jovenes',
+    keywords: 'HEROES, Convencion, Cristo',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   port: process.env.PORT || 3000,
@@ -22,7 +22,7 @@ module.exports = {
     secure: false
   },
   // sessionSecret should be changed for security measures and concerns
-  sessionSecret: process.env.SESSION_SECRET || 'Frikilandia',
+  sessionSecret: process.env.SESSION_SECRET || 'Heroes',
   // sessionKey is set to the generic sessionId key used by PHP applications
   // for obsecurity reasons
   sessionKey: 'sessionId',

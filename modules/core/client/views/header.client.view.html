@@ -1,5 +1,5 @@
 <div class="container" ng-controller="HeaderController">
-  <div class="navbar-header">
+  <!-- <div class="navbar-header">
     <button class="navbar-toggle" type="button" ng-click="toggleCollapsibleMenu()">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
@@ -55,5 +55,52 @@
         </ul>
       </li>
     </ul>
-  </nav>
+  </nav> -->
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <img id="header-logo" src="/modules/core/client/img/heroes-logo.png" alt="Heroes">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Invitados</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#download">Contacto</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#map">Dirección</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
 </div>
+<script>
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+  $('a').click(function(){
+    console.log('df');
+    $('html, body').animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+  });
+});
+</script>

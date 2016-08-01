@@ -1,237 +1,167 @@
 <section ng-controller="HomeController">
-    <div class="video">
-      <div class="transparent-video">
-        <img id="torneo-logo"src="/modules/core/client/img/Torneo.png" alt="">
-        <img id="smash-logo"src="/modules/core/client/img/SSB_logo.png" alt="">
-        <!-- <img id="wii"src="/modules/core/client/img/Wii.png" alt=""> -->
-        <a ui-sref="authentication.signup" ng-hide="authentication.user" class="btn btn-default" id="register-button">
-          <img id="mario"src="/modules/core/client/img/Mario.png" alt="">
-          <img id="register-text"src="/modules/core/client/img/registrate.png" alt="">
-        </a>
-        <button ng-click="openPlatformSelect()" ng-show="authentication.user" class="btn btn-default" id="selecciona-button">
-          <img id="mario"src="/modules/core/client/img/Mario.png" alt="">
-          <img id="selecciona-text"src="/modules/core/client/img/seleccionalaplataforma.png" alt="">
-        </button>
-      </div>
-      <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
-    </div>
-    <!-- Call to Action -->
-    <aside id="bases" class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
+    <!-- Intro Header -->
+<header class="intro">
 
-                  <img id="checa-las-bases"src="/modules/core/client/img/checa.png" alt="">
-                    <button ng-click="open()" class="btn btn-lg btn-light">Click Me!</button>
+    <div class="intro-body">
+    <div class="video">
+      <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading"></h1>
+                    <p class="intro-text">25 - 26 - 27 / Agosto / 2016</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </aside>
-    <section id="services" class="services bg-primary">
-          <div class="container">
-              <div class="row text-center">
-                  <div class="col-lg-10 col-lg-offset-1">
-                      <h2>Premios</h2>
-                      <hr class="small">
-                      <div class="row">
-                          <div class="col-md-4 col-sm-6 col-xs-10 col-sm-offset-0 col-xs-offset-1">
-                              <div class="service-item">
-                                  <h4>
-                                      <strong>1er lugar</strong>
-                                  </h4>
-                                  MiniDrone <br>
-                                  Cubo Rubik <br>
-                                  Playera del evento <br>
+        </div> -->
+    </div>
+    </div>
+</header>
+<!-- image section for guest -->
 
-                                  <img class="img-responsive"src="/modules/core/client/img/1.png" alt="">
+    <section class="no-padding" id="portfolio">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h2>Invitados</h2>
+          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur incidunt doloribus eveniet animi dicta consectetur consequatur laboriosam dolore! Expedita laudantium cumque praesentium tempora eligendi aspernatur doloribus, accusantium delectus fuga velit. -->
+      </div>
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+              <div class="col-lg-4 col-sm-6">
+                  <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
+                      <img src="/modules/core/client/img/LorenaC.jpg" class="img-responsive" alt="">
+                      <div class="portfolio-box-caption">
+                          <div class="portfolio-box-caption-content">
+                              <div class="project-category text-faded">
+                                  <!-- Category -->
                               </div>
-                          </div>
-                          <div class="col-md-4 col-sm-6 col-xs-10 col-sm-offset-0 col-xs-offset-1">
-                              <div class="service-item">
-                                  <h4>
-                                      <strong>2do lugar</strong>
-                                  </h4>
-                                  Cubo Rubik <br>
-                                  Playera del evento <br>
-
-                                  <img class="img-responsive"src="/modules/core/client/img/2.png" alt="">
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-sm-6 col-xs-10 col-sm-offset-0 col-xs-offset-1 text-center">
-                              <div class="service-item">
-                                  <h4>
-                                      <strong>3er lugar</strong>
-                                  </h4>
-                                  Cubo Rubik <br>
-                                  <img class="img-responsive"src="/modules/core/client/img/3.png" alt="">
+                              <div class="project-name">
+                                  Lorena Castellaños
                               </div>
                           </div>
                       </div>
-                      <!-- /.row (nested) -->
-                  </div>
-                  <!-- /.col-lg-10 -->
+                  </a>
               </div>
-              <!-- /.row -->
-          </div>
-          <!-- /.container -->
-      </section>
-
-      <!-- Call to Action -->
-      <aside id="bases" class="call-to-action bg-primary" ng-init="findUsers()">
-          <div class="container">
-              <div class="row">
-                  <div class="col-xs-12 text-center">
-                      <h3>Participantes Registrados</h3>
-                  </div>
-                  <div class="col-md-6 text-center">
-                    <h4>Smash 4</h4>
-                    <img ng-show="user.smash4.register" ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
-                  </div>
-                  <div class="col-md-6 text-center">
-                    <h4>Smash Melee</h4>
-                    <img ng-show="user.smashMelee.register"ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="list-profile-image">
-                  </div>
-              </div>
-          </div>
-      </aside>
-      <aside class="callout">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-xs-12 col-md-12">
-                  <img id="lugaryfecha"src="/modules/core/client/img/lugar.png" alt="">
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="service-item">
-                                <h3>
-                                    <strong>Lugar</strong>
-                                </h3>
-                                <p>En Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite</p>
-                                <h3>
-                                    <strong>Fecha</strong>
-                                </h3>
-                                <p>Sabado 7 de Mayo a las 11:00 AM</p>
-                                <div class="hidden-xs"style="display:inline-block; min-height:290px;">
-                                  <datepicker ng-model="dt" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"date-disabled="true"></datepicker>
-                                </div>
+              <div class="col-lg-4 col-sm-6">
+                <a href="/modules/core/client/img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                    <img src="/modules/core/client/img/TimmyOst.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                <!-- Category -->
+                            </div>
+                            <div class="project-name">
+                                Timmy Ost
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-0 text-center">
-                              <iframe id="mapa" class="img-responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1750.3169625924104!2d-106.09078644201557!3d28.67067784895053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea430b652ff901%3A0x84de078d9641e3!2sPalabra+Viva+Radio!5e0!3m2!1ses-419!2smx!4v1459997851936" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                    <img src="/modules/core/client/img/JONATHANPENA.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                <!-- Category -->
+                            </div>
+                            <div class="project-name">
+                                  Jonathan Peña
+                            </div>
                         </div>
                     </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
+                </a>
             </div>
-            <!-- /.row -->
+            <div class="col-lg-8 col-sm-6">
+                <a href="img/portfolio/fullsize/1.png" class="portfolio-box">
+                    <img src="/modules/core/client/img/soulfire4k _2.jpg" class="img-responsive" alt="">
+                    <div id="soulfire" class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                <!-- Category -->
+                            </div>
+                            <div class="project-name">
+                                Soulfire Revolution
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section">
+        <div class="download-section">
+          <div class="col-md-12 text-center">
+                <h2> Contacto </h2>
+          </div>
+            <div class="container">
+              <div class="col-lg-12 colo-sm6">
+                <div id="contact-container"class="col-lg-6 colo-sm6">
+                    <p> Deja tu información para contactarte </p>
+                    <form role="form">
+                      <div class="form-group">
+                          <label for="ejemplo_nombre_1">Nombre</label>
+                          <input type="nombre" class="form-control" id="ejemplo_nombre_1"
+                            placeholder="Nombre">
+                      </div>
+                      <div class="form-group">
+                          <label for="ejemplo_email_1">Email</label>
+                          <input type="email" class="form-control" id="ejemplo_email_1"
+                             placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                          <label for="ejemplo_Teléfono_1">Teléfono</label>
+                          <input type="Teléfono" class="form-control" id="Teléfono_email_1"
+                             placeholder="Teléfono">
+                      </div>
+                    </form>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Enviar información</a>
+                </div>
+
+                <div id="contact-container"class="col-lg-6 col-sm6">
+                    <p>Pastores Roberto y Nancy Tinoco <Br><Br> Sé bienvenido a nuestros servicios: Miércoles Servicio de Oración 7:00 pm <Br> Domingos Culto General: 11:00 am en Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <Br> Teléfonos de Oficina: (614) 423-2419 - (614) 541-5252 - (614) 541-5339</p>
+                </div>
+              </div>
+            </div>
         </div>
-        <!-- /.container -->
-      </aside>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section  class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contacts Start Bootstrap</h2>
+                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+    <!-- Map Section -->
+    <div id="map"></div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Reactivo</strong>
-                    </h4>
-                    <p>Calle Pino 2700<br>Chihuahua, Chihuahua</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> 4-17-37-17</li>
-                        <!-- <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:reactivo@gmail.com">reactivo@gmail.com</a> -->
-                        </li>
-                    </ul>
-                    <br>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Reactivo 2016</p>
-                </div>
-            </div>
+        <div class="container text-center">
+            <p>Copyright &copy; Reactivo 2016</p>
         </div>
     </footer>
+
+
     <!-- Modal for bases -->
-    <script type="text/ng-template" id="myModalContent.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Bases</h3>
-    </div>
-    <div class="modal-body">
-        Hora: 11:00 am <br>
-        Fecha: 7 / Mayo / 2016 <br>
-        Lugar: Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <br>
-        Inscripción <span class="label label-info">$30 pesos x 1 torneo, o $50 pesos x 2</span>(La cual debera ser pagada hasta 1 hora antes del evento en las instalaciones de ARPA en palabra viva Cosmos). <br>
-        Reglas: <br>
-        <ul class="_5a_q _5yj1" dir="ltr">
-          <li class="_2cuy _509q _2vxa">
-            El escenario de la primera match será elegida      haciendo striking de entre los escenarios iniciales en el orden      presentado.</li>
-            <li class="_2cuy _509q _2vxa">
-              En matches consecutivas, el ganador podrá      hacer ban a un escenario, inicial o counterpick, por el resto del set. El      perdedor, entonces, eligirá cualquier escenario de los restantes que      desee. No habrá bans en sets 3 de 5.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              <span class="_5yi-">Dave's Stupid Rule</span>. Un jugador no puede elegir como counterpick      un escenario en el que ha ganado antes en el mismo set, a menos que su      oponente esté de acuerdo.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              <span class="_5yi-">Gentleman's Rule</span>. Cualquier juego se puede jugar en cualquier      escenario mientras ambos jugadores estén de acuerdo.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              Cualquier acción que pueda prevenir que el juego continúe (Freezing, personajes desapareciendo, game reset, etc.) resultará en el jugador que inció la acción perdiendo la match.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              <span class="_5yi-">Muerte Súbita</span>. Muerte súbita no deberá ser jugada nunca. En caso de que el tiempo acabe, el ganador es elegido basado en quièn tiene      màs stocks, seguido de quièn tiene menos porcentaje. En caso de un      completo empate, la victoria se decidirá con una pelea de 1 stock 3      minutos.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              <span class="_5yi-">Movimientos Suicidas</span>. Los movimientos suicidas (Como Side Special      de Boswer o Ganondorf) son perfectamente válidos, y si una pelea es      empatada como resultado de uno,el jugador que inició el movimiento es      considerado ganador.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              <span class="_5yi-">Pausa Durante Pelea</span>. Si un jugador pone pausa en cualquier      momento durante una pelea, el jugador tendrá que perder una stock.      Cualquier cantidad de pausa, sea  o  segundos, se considera una      violación.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              El tiempo es una parte esencial durante un      torneo. Los jugadores deben estar siempre pendientes de los organizadores      y responder rápidamente. No cumplir puede resultar perdida del set o      incluso descalificación del torneo.
-            </li>
-            <li class="_2cuy _509q _2vxa">
-              Los organizadores tienen derecho a remover a      cualquier persona que crean que está causando desorden.
-            </li>
-          </ul>
-        <tabset justified="true">
-          <tab heading="Smash Bros 4">
-            <div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">2 Stocks, 6 Mins.</li><li class="_2cuy _509q _2vxa">Miis son siempre válidos, usando un Mii      Invitado con moveset 1111.</li><li class="_2cuy _509q _2vxa">En caso de estar disponibles, custom moves      podrán ser utilizados si ambos jugadores están de acuerdo con ello.</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">ESCENARIOS INICIALES</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Battlefield</li><li class="_2cuy _509q _2vxa">Final Destination</li><li class="_2cuy _509q _2vxa">Smashville</li><li class="_2cuy _509q _2vxa">Dreamland</li><li class="_2cuy _509q _2vxa">Town &amp; City</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">COUNTERPICKS</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Lylat Cruise</li><li class="_2cuy _509q _2vxa">Duck Hunt</li></ul>
-          </tab>
-          <tab heading="Smash Bros Melee">
-            <div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">4 Stocks, 8 Mins.</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">ESCENARIOS INICIALES</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Final Destination</li><li class="_2cuy _509q _2vxa">Battlefield</li><li class="_2cuy _509q _2vxa">Yoshi&#039;s Story</li><li class="_2cuy _509q _2vxa">Dreamland</li><li class="_2cuy _509q _2vxa">Fountain of Dreams</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">COUNTERPICKS</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Pokemon Stadium</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">PM</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">4 Stocks, 8 Mins</li><li class="_2cuy _509q _2vxa">Input Buffer Disabled.</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">ESCENARIOS INICIALES</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Final Destination</li><li class="_2cuy _509q _2vxa">Battlefield</li><li class="_2cuy _509q _2vxa">Smashville</li><li class="_2cuy _509q _2vxa">Pokemon Stadium 2</li><li class="_2cuy _509q _2vxa">Dreamland</li><li class="_2cuy _509q _2vxa">Green Hill Zone</li><li class="_2cuy _509q _2vxa">Yoshi&#039;s Story (Melee) [Singles]</li><li class="_2cuy _509q _2vxa">Distant Planet [Doubles]</li></ul><div class="_2cuy _3dgx _2vxa"><span class="_5yi-">COUNTERPICKS</span></div><div class="_2cuy _3dgx _2vxa"><br /></div><ul class="_5a_q _5yj1" dir="ltr"><li class="_2cuy _509q _2vxa">Yoshi&#039;s Island (Brawl)</li><li class="_2cuy _509q _2vxa">Norfair</li><li class="_2cuy _509q _2vxa">Wario Ware</li><li class="_2cuy _509q _2vxa">Fountain of Dreams</li></ul><div class="_2cuy _3dgx _2vxa">   </div></div></div>
-          </tab>
-        </tabset>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-    </div>
-</script>
-
-
-<script type="text/ng-template" id="modalSelectTournament.html">
-<div class="modal-header">
-    <h3 class="modal-title">Selecciona la Paltaforma</h3>
-</div>
-<div class="modal-body">
-<div class="alert alert-info">
-  <strong> Nota: </strong> Se pueden seleccionar ambas plataformas (podras participar en los dos torneos).<br>
-    1 x $30 o las 2 x $50 costo que debera ser cubierto antes del evento en las instalaciones de ARPA en Palabra viva Cosmos.
-</div>
-<div class="row">
-  <div class="col-md-6 text-center">
-    <button type="button" class="btn btn-primary" ng-model="smash4Register" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
-      <img class="img-responsive"src="/modules/core/client/img/smashforwii.png" alt="">
-    </button>
-  </div>
-  <div class="col-md-6 text-center">
-    <button type="button" class="btn btn-primary" ng-model="smashMeleeRegister" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
-      <img class="img-responsive"src="/modules/core/client/img/smashmelee.png" alt="">
-    </button>
-  </div>
-</div>
-</div>
-<div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-
-</div>
-</script>
 </section>

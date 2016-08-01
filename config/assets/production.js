@@ -5,8 +5,6 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.min.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/angular-video-background/dist/vidBg.css'
 
       ],
