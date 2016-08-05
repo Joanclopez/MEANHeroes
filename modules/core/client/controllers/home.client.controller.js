@@ -5,7 +5,16 @@ angular.module('core').controller('HomeController', ['$scope','$state', 'Authent
     // This provides Authentication context.
     $scope.$state = $state;
     $scope.authentication = Authentication;
-
+    $scope.findUsers=function(){
+      $http.get('/api/users-list-home').
+      success(function(data, status) {
+        $scope.users=data;
+        console.log(data);
+      }).
+      error(function(data, status) {
+        console.log(data);
+      });
+    };
 
     $scope.resources = [
       'heroes.mp4',
