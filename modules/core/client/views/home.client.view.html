@@ -7,17 +7,14 @@
     <div class="intro-body">
     <div class="video">
       <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
-        <!-- <div class="container">
+        <div id="date-time" class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading"></h1>
                     <p class="intro-text">25 - 26 - 27 / Agosto / 2016</p>
-                    <a href="#about" class="btn btn-circle page-scroll">
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     </div>
 </header>
@@ -104,19 +101,18 @@
           <div class="col-md-12 text-center">
                 <h2> Contacto </h2>
           </div>
-            <div class="container">
-                <div id="contact-container"class="col-md-12 colo-sm-12">
-                    <div class="col-md-6 col-xs-12 text-center">
-                      <p> Registrate para recibir informacion sobre Heroes</p>
-                      <a id="register-button"ng-hide="authentication.user" ui-sref="authentication.signup" class="btn btn-default btn-lg">Registrate</a>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                      <p>Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <Br> Teléfonos de Oficina: (614) 423-2419 - (614) 541-5252 - (614) 541-5339</p>
-                      <p>Academia de Artes ARPA  Telefono: 4-17-37-17</p>
-                    </div>
-                </div>
+          <div id="contact-container" class="container">
+            <div class="col-md-12 colo-sm-12">
+              <div class="col-md-6 col-xs-12 text-center">
+                <p> Registrate para recibir informacion sobre Heroes</p>
+                <a id="register-button"ng-hide="authentication.user" ui-sref="authentication.signup" class="btn btn-default btn-lg">Registrate</a>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <p>Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <Br> Teléfonos de Oficina: (614) 423-2419 - (614) 541-5252 - (614) 541-5339</p>
+                <p>Academia de Artes ARPA  Telefono: 4-17-37-17</p>
               </div>
             </div>
+          </div>
         </div>
     </section>
 

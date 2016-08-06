@@ -291,7 +291,13 @@ height: 100%;
   z-index: -1;
 }
 
-
+#date-time{
+  position: absolute;
+  position: absolute;
+  top: 170px;
+  width: 100%;
+  text-align: center;
+}
 .list-profile-image {
   /*opacity: 0.8;*/
   margin-top:5px;
