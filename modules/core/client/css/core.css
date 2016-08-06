@@ -315,7 +315,7 @@ a:hover .header-profile-image {
   width: 100%;
   padding: 50px 0;
   color: white;
-  background: url(../img/casette.gif) repeat center center scroll;
+  background: url(/modules/core/client/img/casette.gif) repeat center center scroll;
   background-color: transparent;
   /*-webkit-background-size: cover;
   -moz-background-size: cover;
