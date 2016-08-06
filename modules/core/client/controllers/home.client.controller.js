@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('core').controller('HomeController', ['$scope','$state', 'Authentication','$modal','$http',
   function ($scope,$state, Authentication,$modal,$http) {

@@ -20,7 +20,8 @@ module.exports = {
         'public/lib/angular-file-upload/angular-file-upload.min.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/angular-video-background/dist/vidBg.js'
+        'public/lib/angular-video-background/dist/vidBg.js',
+        'public/lib/particles.js/particles.min.js'
       ]
     },
     css: 'public/dist/application.min.css',
