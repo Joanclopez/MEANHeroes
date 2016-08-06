@@ -8,7 +8,9 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     console.log($scope.$state);
     // Get the topbar menu
     $scope.menu = Menus.getMenu('topbar');
-
+    $scope.displayTopMenu=function(){
+      $scope.displayMenu=!$scope.displayMenu;
+    }
     // Toggle the menu items
     $scope.isCollapsed = false;
     $scope.toggleCollapsibleMenu = function () {
@@ -19,6 +21,6 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$on('$stateChangeSuccess', function () {
       $scope.isCollapsed = false;
     });
-  
+
   }
 ]);
