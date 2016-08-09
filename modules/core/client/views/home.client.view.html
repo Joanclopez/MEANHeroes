@@ -1,6 +1,26 @@
 <section ng-controller="HomeController">
     <!-- Intro Header -->
     <div id="particles-js"></div>
+    <div ng-show="!authentication.user" >
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 class="col-md-12 text-center">Registrate para conocer el evento</h3>
+      <div class="col-md-12 text-center">
+        <img id="facebook-image" ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </div>
+    </div>
+<div ng-show="authentication.user">
 
 <header class="intro" ng-init="findUsers()">
 
@@ -122,7 +142,7 @@
           <div class="col-lg-8 col-lg-offset-2">
             <h2>Registrados para el evento</h2>
             <div class="col-md-12 text-center">
-              <img  ng-show="user.inscription" class="list-profile-image" ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" popover="{{user.displayName}}" popover-trigger="mouseenter">
+              <img class="list-profile-image" ng-repeat="user in users" ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" popover="{{user.displayName}}" popover-trigger="mouseenter">
               <br><br>
             </div>
           </div>
@@ -130,6 +150,7 @@
     </section>
     <!-- Map Section-->
     <div id="map"></div>
+</div>
 
     <!-- Footer -->
     <footer>

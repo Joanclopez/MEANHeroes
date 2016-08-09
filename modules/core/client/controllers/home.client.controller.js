@@ -4,6 +4,15 @@ angular.module('core').controller('HomeController', ['$scope','$state', 'Authent
     // This provides Authentication context.
     $scope.$state = $state;
     $scope.authentication = Authentication;
+    // OAuth provider request
+    $scope.callOauthProvider = function (url) {
+      if ($state.previous && $state.previous.href) {
+        url += '?redirect_to=' + encodeURIComponent($state.previous.href);
+      }
+
+      // Effectively call OAuth authentication route:
+      $window.location.href = url;
+    };
     $scope.findUsers=function(){
       $http.get('/api/users-list-home').
       success(function(data, status) {
