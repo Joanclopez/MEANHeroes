@@ -1,6 +1,6 @@
 
-angular.module('core').controller('HomeController', ['$scope','$state', 'Authentication','$modal','$http',
-  function ($scope,$state, Authentication,$modal,$http) {
+angular.module('core').controller('HomeController', ['$scope','$state', 'Authentication','$modal','$http', '$window',
+  function ($scope,$state, Authentication,$modal,$http,$window) {
     // This provides Authentication context.
     $scope.$state = $state;
     $scope.authentication = Authentication;
