@@ -48,8 +48,5 @@ $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
 
 
-
-}
-
   }
 ]);
