@@ -3,8 +3,8 @@
 module.exports = {
   app: {
     title: 'HEROES',
-    description: 'Convencion de jovenes',
-    keywords: 'HEROES, Convencion, Cristo',
+    description: 'Este año la convención de jóvenes y adolescentes HEROES llega más intensa que nunca.Una multitud de jóvenes y adolescentes reunidos en un solo lugar con un solo propósito. Tú quieres estar aquí ',
+    keywords: 'HEROES, Convencion, Palabra Viva,Descubre Tus Poderes‬, Heroes2016‬, No Pares‬',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   port: process.env.PORT || 3000,
@@ -27,13 +27,13 @@ module.exports = {
   // for obsecurity reasons
   sessionKey: 'sessionId',
   sessionCollection: 'sessions',
-  logo: 'modules/core/client/img/brand/logo.png',
-  favicon: 'modules/core/client/img/brand/favicon.ico',
+  logo: 'http://universoreactivo.com/modules/core/client/img/brand/logo.png',
+  favicon: 'http://universoreactivo.com/modules/core/client/img/brand/favicon.ico',
   uploads: {
     profileUpload: {
       dest: './modules/users/client/img/profile/uploads/', // Profile upload destination path
       limits: {
-        fileSize: 1*1024*1024 // Max file size in bytes (1 MB)
+        fileSize: 32*1024*1024 // Max file size in bytes (1 MB)
       }
     }
   }
