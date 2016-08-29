@@ -1,140 +1,23 @@
 <section ng-controller="HomeController">
     <!-- Intro Header -->
     <div id="particles-js"></div>
-    <div ng-if="!authentication.user" >
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h3 class="col-md-12 text-center">Registrate con facebook para conocer el evento <br><span>(click aqui)</span> <br> <span class="glyphicon glyphicon-circle-arrow-down"></span></h3>
-      <div class="col-md-12 text-center">
-        <img id="facebook-image" ng-click="callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      </div>
-    </div>
-<div ng-show="authentication.user">
 
-<header class="intro" ng-init="findUsers();init()">
+<header class="intro" ng-init="findUsers();">
 
     <div class="intro-body">
     <div class="video">
-      <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
+      <vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="false" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"></vid-bg>
         <div id="date-time" class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading"></h1>
-                    <p class="intro-text">25 - 26 - 27 / Agosto / 2016</p>
+                    <p class="intro-text">#Heroes2017 <br> #HagamosHistoria</p>
                 </div>
             </div>
         </div>
     </div>
     </div>
 </header>
-<!-- image section for guest -->
-
-    <section class="no-padding" id="portfolio">
-      <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2>Invitados</h2>
-          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur incidunt doloribus eveniet animi dicta consectetur consequatur laboriosam dolore! Expedita laudantium cumque praesentium tempora eligendi aspernatur doloribus, accusantium delectus fuga velit. -->
-      </div>
-        <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
-              <div class="col-lg-4 col-sm-6">
-                  <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
-                      <img src="/modules/core/client/img/LorenaC.jpg" class="img-responsive" alt="">
-                      <div class="portfolio-box-caption">
-                          <div class="portfolio-box-caption-content">
-                              <div class="project-category text-faded">
-                                  <!-- Category -->
-                              </div>
-                              <div class="project-name">
-                                  Lorena Castellaños <br>
-                                  Lorena Castellanos - desde Miami Florida, de la iglesia MCI con alrededor de 200,000 miembros.
-                              </div>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <a href="/modules/core/client/img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                    <img src="/modules/core/client/img/TimmyOst.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                <!-- Category -->
-                            </div>
-                            <div class="project-name">
-                                Timmy Ost <br>
-                                Desde Ciudad de Mexico Director de Especialidades Juveniles MEXICO y lider de jóvenes en PuntoNET. Ha recorrdido más de 50 países alrededor del mundo, llevando el mensaje de la Cruz. Tiene una pasión desenfrenada por los jóvenes.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                    <img src="/modules/core/client/img/JONATHANPENA.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                <!-- Category -->
-                            </div>
-                            <div class="project-name">
-                                  Jonathan Peña <br>
-                                  lidera el Proyecto Ezequiel, ministerio de Jovenes de la iglesia Church on the Hill en Cedar Hill Texas. Este proyecto tiene una fuerte influencia en las escuelas publicas, alcanzando a cientos de estudiantes por semana en sus campuses.
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-8 col-sm-6">
-                <a href="img/portfolio/fullsize/1.png" class="portfolio-box">
-                    <img src="/modules/core/client/img/soulfire4k _2.jpg" class="img-responsive" alt="">
-                    <div id="soulfire" class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                <!-- Category -->
-                            </div>
-                            <div class="project-name">
-                                Soulfire Revolution <br>
-                                Desde Bogotá Colombia - Empezaron como el equipo de alabanza, liderando a miles de jóvenes semana trás semana. Su primer álbum “Aviva” fue grabado en ingles, español y portugués, e incluye canciones poderosas como Espíritu Ven donde colaboró TobyMac y Aviva donde participó Kim Walker Smith con este álbum ganaron el premio Dove como “Mejor álbum en español”
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="content-section">
-        <div class="download-section">
-          <div class="col-md-12 text-center">
-                <h2> Contacto </h2>
-          </div>
-          <div id="contact-container" class="container">
-            <div class="col-md-12 colo-sm-12">
-              <div class="col-md-6 col-xs-12 text-center">
-                <p> Registrate para recibir informacion sobre Heroes</p>
-                <a id="register-button"ng-hide="authentication.user" ui-sref="authentication.signup" class="btn btn-default btn-lg">Registrate</a>
-              </div>
-              <div class="col-md-6 col-xs-12">
-                <p>Palabra Viva Cosmos ubicado en calle Pino 2700 (esquina con calle cosmos) Col. Satélite <Br> Teléfonos de Oficina: (614) 423-2419 - (614) 541-5252 - (614) 541-5339</p>
-                <p>Academia de Artes ARPA  Telefono: 4-17-37-17</p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section  class="container content-section text-center">
@@ -148,44 +31,7 @@
           </div>
         </div>
     </section>
-    <section  class="container content-section text-center">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th class="text-center">TIPO DE ENTRADA</th>
-                    <th></th>
-                    <th class="text-center">PRECIO (MXN)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Preventa</td>
-                    <td>Hasta el 14 de Agosto</td>
-                    <td>$150</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Precio normal</td>
-                    <td>Hasta el 24 de Agosto</td>
-                    <td>$200</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Dia del evento</td>
-                    <td>25 - 27 de Agosto</td>
-                    <td>$250</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </div>
-    </section>
-    <!-- Map Section-->
-    <div id="map"></div>
+
 </div>
 
     <!-- Footer -->
@@ -194,119 +40,6 @@
             <p>Copyright &copy; Reactivo 2016</p>
         </div>
     </footer>
-<script>
-particlesJS("particles-js", {
-"particles": {
-  "number": {
-    "value": 80,
-    "density": {
-      "enable": true,
-      "value_area": 800
-    }
-  },
-  "color": {
-    "value": "#3BF325"
-  },
-  "shape": {
-    "type": "circle",
-    "stroke": {
-      "width": 0,
-      "color": "#000000"
-    },
-    "polygon": {
-      "nb_sides": 5
-    },
-    "image": {
-      "src": "img/github.svg",
-      "width": 100,
-      "height": 100
-    }
-  },
-  "opacity": {
-    "value": 0.5,
-    "random": false,
-    "anim": {
-      "enable": false,
-      "speed": 1,
-      "opacity_min": 0.1,
-      "sync": false
-    }
-  },
-  "size": {
-    "value": 3,
-    "random": true,
-    "anim": {
-      "enable": false,
-      "speed": 40,
-      "size_min": 0.1,
-      "sync": false
-    }
-  },
-  "line_linked": {
-    "enable": true,
-    "distance": 150,
-    "color": "#BF114C",
-    "opacity": 1,
-    "width": 2
-  },
-  "move": {
-    "enable": true,
-    "speed": 6,
-    "direction": "none",
-    "random": false,
-    "straight": false,
-    "out_mode": "out",
-    "bounce": false,
-    "attract": {
-      "enable": false,
-      "rotateX": 600,
-      "rotateY": 1200
-    }
-  }
-},
-"interactivity": {
-  "detect_on": "canvas",
-  "events": {
-    "onhover": {
-      "enable": false,
-      "mode": "grab"
-    },
-    "onclick": {
-      "enable": false,
-      "mode": "push"
-    },
-    "resize": true
-  },
-  "modes": {
-    "grab": {
-      "distance": 140,
-      "line_linked": {
-        "opacity": 1
-      }
-    },
-    "bubble": {
-      "distance": 400,
-      "size": 40,
-      "duration": 2,
-      "opacity": 8,
-      "speed": 3
-    },
-    "repulse": {
-      "distance": 200,
-      "duration": 0.4
-    },
-    "push": {
-      "particles_nb": 4
-    },
-    "remove": {
-      "particles_nb": 2
-    }
-  }
-},
-"retina_detect": true
-});
-
-</script>
 
     <!-- Modal for bases -->
 </section>
